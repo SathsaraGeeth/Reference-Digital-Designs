@@ -1,3 +1,13 @@
+module FA (
+    input  logic a,
+    input  logic b,
+    input  logic cin,
+    output logic sum,
+    output logic cout
+);
+    assign {cout, sum} = a + b + cin;
+endmodule
+
 /* 
 
 Takes three 1-bit inputs a, b, cin and produces a 2-bit output {cout, sum}.
@@ -11,8 +21,8 @@ module FA (
     output logic cout
 );
     always_comb begin
-        sum = a ^ b ^ cin; // odd parity function
-        cout = (a & b) | (b & cin) | (cin & a); // majority function
+        sum = a ^ b ^ cin;                          // odd parity function
+        cout = (a & b) | (b & cin) | (cin & a);     // majority function
     end
 endmodule
 

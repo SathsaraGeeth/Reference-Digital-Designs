@@ -1,3 +1,12 @@
+module HA (
+    input  logic a,
+    input  logic b,
+    output logic sum,
+    output logic carry
+);
+    assign {carry, sum} = a + b;
+endmodule
+
 /* 
 
 Takes two 1-bit inputs a, b and produces a 2-bit output {carry, sum}.
